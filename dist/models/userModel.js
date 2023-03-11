@@ -37,6 +37,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const texts_1 = require("../const/texts");
+// eslint-disable-next-line import/no-extraneous-dependencies
 const val = __importStar(require("validator"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const Schema = mongoose_1.default.Schema;

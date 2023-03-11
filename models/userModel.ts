@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import { texts } from '../const/texts';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import * as val from 'validator';
 import bcrypt from 'bcrypt';
 
