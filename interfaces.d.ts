@@ -5,8 +5,7 @@ interface IDeck {
 
 interface IUSer {
   username: string;
-  email: string;
-  password: string;
+  googleId: string;
 }
 
 declare interface Error {
