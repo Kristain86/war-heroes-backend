@@ -10,15 +10,20 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const decks_1 = __importDefault(require("./routes/decks"));
 const authRoutes_1 = __importDefault(require("./routes/authRoutes"));
 const mongoose_1 = __importDefault(require("mongoose"));
-const deckModel_1 = __importDefault(require("./models/deckModel"));
 const userModel_1 = __importDefault(require("./models/userModel"));
-/* import passportSetup from './services/passport-setup'; */
 const cookie_session_1 = __importDefault(require("cookie-session"));
 const passport_1 = __importDefault(require("passport"));
 const passport_google_oauth20_1 = require("passport-google-oauth20");
+const keys_1 = require("./const/keys");
+const cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT;
+app.use((0, cors_1.default)({
+    origin: '*',
+    methods: 'GET, POST, PATCH, DELETE, PUT',
+    allowedHeaders: 'Content-Type, Authorization',
+}));
 // middleware
 app.use(express_1.default.json());
 // set view engine for now
@@ -32,7 +37,6 @@ app.use(passport_1.default.initialize());
 app.use(passport_1.default.session());
 /* passportSetup(); */
 app.use((req, res, next) => {
-    console.log(req.path, req.method);
     next();
 });
 app.get('/', (req, res) => {
@@ -42,11 +46,15 @@ app.use('/api/decks', decks_1.default);
 app.use('/api/auth', authRoutes_1.default);
 // connect to db
 mongoose_1.default.set('strictQuery', false);
-const decksDb = mongoose_1.default.createConnection(process.env.MONGO_URI);
+mongoose_1.default
+    .connect(process.env.MONGO_URI, {})
+    .then(() => {
+    console.log('MongoDB Connected');
+})
+    .catch((err) => console.log(err));
+/* const decksDb = mongoose.createConnection(process.env.MONGO_URI as string); */
 const usersDb = mongoose_1.default.createConnection(process.env.MONGO_URI_USERS);
 // declare model and connect/create collection (name of collection, schema of collection)
-const Deck = decksDb.model('Deck', deckModel_1.default);
-exports.Deck = Deck;
 const User = usersDb.model('User', userModel_1.default);
 exports.User = User;
 passport_1.default.serializeUser((user, done) => {
@@ -58,17 +66,16 @@ passport_1.default.deserializeUser((id, done) => {
     });
 });
 passport_1.default.use(new passport_google_oauth20_1.Strategy({
-    clientID: '280528556929-1u71emnf1l0j9ql2d3ubthr46po0n600.apps.googleusercontent.com',
-    clientSecret: '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',
-    callbackURL: 'http://localhost:8000/api/auth/google/redirect',
-    userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo',
+    clientID: keys_1.authKeys.AUTH_CLIENT_ID,
+    clientSecret: keys_1.authKeys.AUTH_CLIENT_SECRET,
+    callbackURL: keys_1.authKeys.CALLBACK_URL,
+    userProfileURL: keys_1.authKeys.USER_PROFILE_URL,
     scope: ['profile'],
-    passReqToCallback: true,
-}, function (request, accessToken, refreshToken, profile, done) {
+}, function (accessToken, refreshToken, profile, done) {
     User.findOne({ googleId: profile.id }).then((currentUser) => {
+        console.log(profile);
         if (currentUser) {
-            console.log('userIs', currentUser);
-            done();
+            done(null, currentUser);
         }
         else {
             new User({
@@ -81,7 +88,6 @@ passport_1.default.use(new passport_google_oauth20_1.Strategy({
             });
         }
     });
-    console.log(request, profile);
 }));
 app.listen(port, () => {
     console.log(`⚡️[server]: Server and db running yep at http://localhost:${port}`);

@@ -20,4 +20,4 @@ const deckSchema = new Schema<IDeck>(
   }
 );
 
-export default deckSchema;
+export const Deck = mongoose.model('Deck', deckSchema);

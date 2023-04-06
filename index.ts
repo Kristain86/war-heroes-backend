@@ -6,15 +6,24 @@ import authRoutes from './routes/authRoutes';
 import mongoose from 'mongoose';
 import deckSchema from './models/deckModel';
 import userSchema from './models/userModel';
-/* import passportSetup from './services/passport-setup'; */
 import cookieSession from 'cookie-session';
 import passport from 'passport';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+import { authKeys } from './const/keys';
+import cors from 'cors';
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT;
+
+app.use(
+  cors({
+    origin: '*',
+    methods: 'GET, POST, PATCH, DELETE, PUT',
+    allowedHeaders: 'Content-Type, Authorization',
+  })
+);
 
 // middleware
 app.use(express.json());
@@ -30,14 +39,11 @@ app.use(
 );
 
 //inititalize passport
-
 app.use(passport.initialize());
 app.use(passport.session());
 
 /* passportSetup(); */
-
 app.use((req: Request, res: Response, next: () => void) => {
-  console.log(req.path, req.method);
   next();
 });
 
@@ -51,11 +57,18 @@ app.use('/api/auth', authRoutes);
 // connect to db
 mongoose.set('strictQuery', false);
 
-const decksDb = mongoose.createConnection(process.env.MONGO_URI as string);
+mongoose
+  .connect(process.env.MONGO_URI as string, {})
+  .then(() => {
+    console.log('MongoDB Connected');
+  })
+  .catch((err) => console.log(err));
+
+/* const decksDb = mongoose.createConnection(process.env.MONGO_URI as string); */
 const usersDb = mongoose.createConnection(process.env.MONGO_URI_USERS as string);
 
 // declare model and connect/create collection (name of collection, schema of collection)
-const Deck = decksDb.model('Deck', deckSchema);
+
 const User = usersDb.model('User', userSchema);
 
 passport.serializeUser((user: any, done) => {
@@ -71,18 +84,17 @@ passport.deserializeUser((id, done) => {
 passport.use(
   new GoogleStrategy(
     {
-      clientID: '280528556929-1u71emnf1l0j9ql2d3ubthr46po0n600.apps.googleusercontent.com',
-      clientSecret: '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',
-      callbackURL: 'http://localhost:8000/api/auth/google/redirect',
-      userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo',
+      clientID: authKeys.AUTH_CLIENT_ID,
+      clientSecret: authKeys.AUTH_CLIENT_SECRET,
+      callbackURL: authKeys.CALLBACK_URL,
+      userProfileURL: authKeys.USER_PROFILE_URL,
       scope: ['profile'],
-      passReqToCallback: true,
     },
-    function (request, accessToken, refreshToken, profile, done) {
+    function (accessToken, refreshToken, profile, done) {
       User.findOne({ googleId: profile.id }).then((currentUser) => {
+        console.log(profile);
         if (currentUser) {
-          console.log('userIs', currentUser);
-          done();
+          done(null, currentUser);
         } else {
           new User({
             username: profile.displayName,
@@ -94,8 +106,6 @@ passport.use(
             });
         }
       });
-
-      console.log(request, profile);
     }
   )
 );

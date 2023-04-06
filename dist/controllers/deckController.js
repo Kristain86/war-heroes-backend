@@ -14,10 +14,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateDeck = exports.deleteDeck = exports.getDeck = exports.getAllDecks = exports.createDeck = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
-const index_1 = require("../index");
+const deckModel_1 = require("../models/deckModel");
 // get all decks
 const getAllDecks = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const allDecks = yield index_1.Deck.find({}).sort({ createdAt: -1 });
+    const allDecks = yield deckModel_1.Deck.find({}).sort({ createdAt: -1 });
     res.status(200).json(allDecks);
 });
 exports.getAllDecks = getAllDecks;
@@ -28,7 +28,7 @@ const getDeck = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.status(404).json({ error: 'No deck found and save crash' });
     }
     else {
-        const deck = yield index_1.Deck.findById(id);
+        const deck = yield deckModel_1.Deck.findById(id);
         if (!deck) {
             return res.status(404).json({ error: 'No deck found' });
         }
@@ -40,7 +40,7 @@ exports.getDeck = getDeck;
 const createDeck = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { title, numberOfCards } = req.body;
     try {
-        const deck = yield index_1.Deck.create({ title, numberOfCards });
+        const deck = yield deckModel_1.Deck.create({ title, numberOfCards });
         res.status(200).json(deck);
     }
     catch (error) {
@@ -58,7 +58,7 @@ const deleteDeck = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     if (!mongoose_1.default.Types.ObjectId.isValid(id)) {
         res.status(404).json({ error: 'No deck found and save crash' });
     }
-    const deck = yield index_1.Deck.findOneAndDelete({ _id: id });
+    const deck = yield deckModel_1.Deck.findOneAndDelete({ _id: id });
     if (!deck) {
         return res.status(400).json({ error: 'No deck found' });
     }
@@ -71,7 +71,7 @@ const updateDeck = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     if (!mongoose_1.default.Types.ObjectId.isValid(id)) {
         res.status(404).json({ error: 'No deck found and save crash' });
     }
-    const deck = yield index_1.Deck.findOneAndUpdate({ _id: id }, Object.assign({}, req.body));
+    const deck = yield deckModel_1.Deck.findOneAndUpdate({ _id: id }, Object.assign({}, req.body));
     if (!deck) {
         return res.status(400).json({ error: 'No deck found' });
     }
