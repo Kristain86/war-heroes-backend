@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import mongoose from 'mongoose';
-import { Deck } from '../index';
+import { Deck } from '../models/deckModel';
 
 // get all decks
 const getAllDecks = async (req: Request, res: Response) => {

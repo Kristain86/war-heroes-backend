@@ -1,0 +1,282 @@
+[
+
+
+  {
+    "id": "mario-1",
+    "name": "Mario",
+    "type": "Hero",
+    "element": "Fire",
+    "ability": [{
+      "name": "Fire and flames",
+      "cost": 3,
+      "text": "hit for 5 damage and 1 additional damage per turn"
+    }],
+    "attack": 3,
+    "life": 8,
+    "image": ""
+  },
+  {
+    "id": "mario-2",
+    "name": "Bowser",
+    "type": "Hero",
+    "element": "Dark",
+    "ability": [{
+      "name": "Death wish",
+      "cost": 3,
+      "text": "Reduce target hero's life by half, then hit 1 damage per turn"
+    }],
+    "attack": 6,
+    "life": 8,
+    "image": ""
+  },
+  {
+    "id": "mario-3",
+    "name": "Luigi",
+    "type": "Hero",
+    "element": "Water",
+    "ability": [{
+      "name": "Flooded web",
+      "cost": 2,
+      "text": "Reduce by 2 the attack of target hero, then hit for 1"
+    }],
+    "attack": 2,
+    "life": 7,
+    "image": ""
+  },
+
+
+  {
+    "id": "mario-4",
+    "name": "Latiku",
+    "type": "Warrior",
+    "ability": [{
+      "name": "Axe assault",
+      "cost": "entering-the-game",
+      "text": "When enter the game deal 2 damage to any target"
+    }],
+    "attack": 2,
+    "life": 1,
+    "image": ""
+  },
+
+  {
+    "id": "mario-5",
+    "name": "Toad",
+    "type": "Warrior",
+    "attack": 1,
+    "life": 1,
+    "image": ""
+  },
+
+  {
+    "id": "mario-6",
+    "name": "Koopa Paratroopa",
+    "type": "Warrior",
+    "ability": [{
+      "name": "Hit and fly",
+      "cost": "leaving-the-game",
+      "text": "When leaves the game hit for 2 to all warriors and heroes"
+    }],
+    "attack": 3,
+    "life": 2,
+    "image": ""
+  },
+
+  {
+    "id": "mario-7",
+    "name": "Kamek",
+    "type": "Warrior",
+    "attack": 2,
+    "life": 1,
+    "image": ""
+  },
+
+  {
+    "id": "mario-8",
+    "name": "Princess Peach",
+    "type": "Warrior",
+    "ability": [{
+      "name": "Healing mario",
+      "cost": "entering-the-game",
+      "text": "When enter the game heal 3 HP to Mario Hero"
+    }],
+    "attack": 1,
+    "life": 2,
+    "image": ""
+  },
+
+  {
+    "id": "mario-9",
+    "name": "Bowser Jr.",
+    "type": "Warrior",
+    "ability": [{
+      "name": "Reinforcing dad",
+      "cost": "entering-the-game",
+      "text": "When enter the game add 2 more points to Bowser's attack"
+    }],
+    "attack": 2,
+    "life": 2,
+    "image": ""
+  },
+
+  {
+    "id": "mario-10",
+    "name": "Yoshi",
+    "type": "Warrior",
+    "attack": 2,
+    "life": 2,
+    "image": ""
+  },
+
+  {
+    "id": "mario-11",
+    "name": "King Boo",
+    "type": "Warrior",
+    "attack": 1,
+    "life": 3,
+    "image": ""
+  },
+
+  {
+    "id": "mario-12",
+    "name": "Wario",
+    "type": "Warrior",
+    "attack": 1,
+    "life": 1,
+    "image": ""
+  },
+
+  {
+    "id": "mario-13",
+    "name": "Princess Daisy",
+    "type": "Warrior",
+    "attack": 1,
+    "life": 1,
+    "image": ""
+  },
+
+
+
+  {
+    "id": "mario-14",
+    "name": "Star",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Prevent the next 4 damage to target hero"
+    }],
+    "image": ""
+  },
+
+  {
+    "id": "mario-15",
+    "name": "Super Mushroom",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Duplicate target attack until next turn"
+    }],
+    "image": ""
+  },
+
+  {
+    "id": "mario-16",
+    "name": "Fire Flower",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Hit for 1 damage and keep hitting 1 per turn to target"
+    }],
+    "image": ""
+  },
+
+  {
+    "id": "mario-17",
+    "name": "Super Leaf",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Hit for 1 to target then paralyze it one turn"
+    }],
+    "image": ""
+  },
+
+  {
+    "id": "mario-18",
+    "name": "Bowser's fury",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Hit for 4 damage to all heroes and warriors"
+    }],
+    "image": ""
+  },
+
+  {
+    "id": "mario-19",
+    "name": "Lugis's fight",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Destroy target warrior"
+    }],
+    "image": ""
+  },
+
+  {
+    "id": "mario-20",
+    "name": "Marios's Oddisey",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Change all the energy type in storage to any. Add 2 of the chosen type"
+    }],
+    "image": ""
+  },
+
+
+
+  {
+    "id": "mario-21",
+    "name": "Mashroom Kingdom",
+    "type": "Land",
+    "ability": [{
+      "cost": "during-the-game",
+      "text": "Add 1 [Fire] per turn"
+    }],
+    "image": ""
+  },
+
+  {
+    "id": "mario-22",
+    "name": "Bowser's Castle",
+    "type": "Land",
+    "ability": [{
+      "cost": "during-the-game",
+      "text": "Add 2 [Dark]  per turn, hit 1 life to your hero per turn"
+    }],
+    "image": ""
+  },
+
+  {
+    "id": "mario-23",
+    "name": "Underwater kingdom",
+    "type": "Land",
+    "ability": [{
+      "cost": "during-the-game",
+      "text": "Add 1 [Water] per turn"
+    }],
+    "image": ""
+  },
+
+  {
+    "id": "mario-24",
+    "name": "Sand kingdom",
+    "type": "Land",
+    "ability": [{
+      "cost": "during-the-game",
+      "text": "Add 1 [Fire] per turn or hit for 1 to target warrior"
+    }],
+    "image": ""
+  }
+]

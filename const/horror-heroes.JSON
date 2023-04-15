@@ -1,0 +1,281 @@
+[{
+    "id": "horror-1",
+    "name": "Frederick Krueger",
+    "type": "Hero",
+    "element": "Fire",
+    "ability": [{
+      "name": "Nightmare maelstrom",
+      "cost": 3,
+      "text": "Hit 5 to target hero, then hit 4 to target Warrior then destroy 1 energy from enemy"
+    }],
+    "attack": 4,
+    "life": 8,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-1.jpg"
+  }, {
+    "id": "horror-2",
+    "name": "Jason Voorhees",
+    "type": "Hero",
+    "element": "Dark",
+    "ability": [{
+      "name": "Comeback from hell",
+      "cost": 6,
+      "text": "When Jason died, return it to battlefield with half of the initial life"
+    }],
+    "attack": 5,
+    "life": 10,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-2.jpg"
+  },
+  {
+    "id": "horror-3",
+    "name": "Pennywise",
+    "type": "Hero",
+    "element": "Dark",
+    "ability": [{
+      "name": "Shapeshift",
+      "cost": 3,
+      "text": "For any ability visible in the battlefield yours or enemy, use it for free this turn"
+    }],
+    "attack": 4,
+    "life": 7,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-3.jpg"
+  },
+
+
+  {
+    "id": "horror-4",
+    "name": "Charles Lee Ray",
+    "type": "Warrior",
+    "attack": 1,
+    "life": 1,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-4.jpg"
+  },
+
+  {
+    "id": "horror-5",
+    "name": "Annabelle",
+    "type": "Warrior",
+    "attack": 1,
+    "life": 1,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-5.jpg"
+  },
+
+  {
+    "id": "horror-6",
+    "name": "Count Dracula",
+    "type": "Warrior",
+    "ability": [{
+      "name": "Life drain",
+      "cost": "leaving-the-game",
+      "text": "Hit for 1, then heal enemy for 1"
+    }],
+    "attack": 2,
+    "life": 2,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-6.jpg"
+  },
+
+  {
+    "id": "horror-7",
+    "name": "The Xenomorphs",
+    "type": "Warrior",
+    "ability": [{
+      "name": "Acid rain",
+      "cost": "entering-the-game",
+      "text": "Hit for 1 to all targets but itself"
+    }],
+    "attack": 3,
+    "life": 1,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-7.jpg"
+  },
+
+  {
+    "id": "horror-8",
+    "name": "Lipstick-Face",
+    "type": "Warrior",
+    "ability": [{
+      "name": "Collateral damage",
+      "cost": "entering-the-game",
+      "text": "Hit for 3 to your hero"
+    }],
+    "attack": 4,
+    "life": 1,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-8.jpg"
+  },
+
+  {
+    "id": "horror-9",
+    "name": "Ghostface",
+    "type": "Warrior",
+    "ability": [{
+      "name": "One hundred cuts",
+      "cost": "entering-the-game",
+      "text": "Hit 2 to target, then hit 1 to same target per turn"
+    }],
+    "attack": 2,
+    "life": 1,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-9.jpg"
+  },
+
+  {
+    "id": "horror-10",
+    "name": "Samara Morgan",
+    "type": "Warrior",
+    "attack": 1,
+    "life": 1,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-10.jpg"
+  },
+
+  {
+    "id": "horror-11",
+    "name": "Slenderman",
+    "type": "Warrior",
+    "attack": 1,
+    "life": 2,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-11.jpg"
+  },
+
+
+  {
+    "id": "horror-12",
+    "name": "Jack",
+    "type": "Warrior",
+    "attack": 1,
+    "life": 1,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-12.jpg"
+  },
+
+  {
+    "id": "horror-13",
+    "name": "Jaws",
+    "type": "Warrior",
+    "attack": 2,
+    "life": 1,
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-13.jpg"
+  },
+
+  {
+    "id": "terror-14",
+    "name": "Freddy's claws",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Hit for 3 to target"
+    }],
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-14.jpg"
+  },
+
+  {
+    "id": "terror-15",
+    "name": "Balloon party",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Destroy warrior with less attack"
+    }],
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-15.jpg"
+  },
+
+  {
+    "id": "terror-16",
+    "name": "Let's play a game",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Roll 4 coins. For each win destroy 1 energy or hit for 1 to any target"
+    }],
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-16.jpg"
+  },
+
+  {
+    "id": "terror-17",
+    "name": "Karras's bible",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Drain 2 life to target enemy hero to your hero or warrior"
+    }],
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-17.jpg"
+  },
+
+  {
+    "id": "terror-18",
+    "name": "The Mamushka dance",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "All your warriors and hero get +1 in life or +1 in attack"
+    }],
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-18.jpg"
+  },
+
+
+  {
+    "id": "terror-19",
+    "name": "Blair Witch rite",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Remove 1 turn of the game target enemy warrior"
+    }],
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-19.jpg"
+  },
+
+  {
+    "id": "terror-20",
+    "name": "Silver Bullets",
+    "type": "Util",
+    "ability": [{
+      "cost": "entering-the-game",
+      "text": "Destroy target warrior"
+    }],
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-20.jpg"
+  },
+
+
+  {
+    "id": "horror-21",
+    "name": "The Overlook Hotel",
+    "type": "Land",
+    "ability": [{
+      "cost": "during-the-game",
+      "text": "Add 1 [Dark] every turn"
+    }],
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-21.jpg"
+  },
+
+
+  {
+    "id": "horror-22",
+    "name": "Pet Sematary",
+    "type": "Land",
+    "ability": [{
+      "cost": "during-the-game",
+      "text": "Add 2 [Dark] every turn and your hero lose 1 life every turn"
+    }],
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-22.jpg"
+  },
+
+
+  {
+    "id": "horror-23",
+    "name": "Derry",
+    "type": "Land",
+    "ability": [{
+      "cost": "during-the-game",
+      "text": "Add 1 [Fire] or [Dark] every turn, if [Fire] is selected your hero lose 1 life"
+    }],
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-23.jpg"
+  },
+
+
+  {
+    "id": "horror-24",
+    "name": "Raccoon City",
+    "type": "Land",
+    "ability": [{
+      "cost": "during-the-game",
+      "text": "Add 1 [Fire] every turn"
+    }],
+    "image": "https://ik.imagekit.io/njvjq6e5c/horror-24.jpg"
+  }
+
+]
