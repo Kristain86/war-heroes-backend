@@ -206,7 +206,7 @@ app.use('/api/cards', CardsRoutes);
 mongoose.set('strictQuery', false);
 
 mongoose
-  .connect('https://war-heroes-backend.onrender.com' as string, {})
+  .connect(process.env.MONGO_URI as string, {})
   .then(() => {
     console.log('MongoDB Connected');
   })
