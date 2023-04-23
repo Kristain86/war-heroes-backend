@@ -3,7 +3,9 @@
 // endpoints:
 
 GET https://war-heroes-backend.onrender.com/api/series
+
 POST https://war-heroes-backend.onrender.com/api/series/create-deck
+
 GET - UPDATE - DELETE https://war-heroes-backend.onrender.com/api/series/[serie-id]
 
 GET https://war-heroes-backend.onrender.com/api/cards
