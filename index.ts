@@ -212,6 +212,6 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.listen(port, () => {
+app.listen('https://war-heroes-21128.web.app/', () => {
   console.log(`⚡️[server]: Server and db running yep at http://localhost:${port}`);
 });
