@@ -25,6 +25,7 @@ const passport_google_oauth20_1 = require("passport-google-oauth20");
 const keys_1 = require("./const/keys");
 const userModel_1 = require("./models/userModel");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+require("newrelic");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT;
