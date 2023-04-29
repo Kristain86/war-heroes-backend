@@ -1,9 +1,7 @@
-services:
-  web:
-    buildCommand: npm run build
-    startCommand: node dist/index.js
-    environment:
-      NODE_ENV: production
-    healthCheckPath: /health
-    supplementalFiles:
-      - logs/**/*.log
+name: war-heroes-backend
+docker:
+  image: render/node:14
+env:
+  NEW_RELIC_LICENSE_KEY: ca8849a3ef8f6602f296e4008dde85f7FFFFNRAL
+  NEW_RELIC_APP_NAME: "war-heroes-backend"
+startCommand: "node -r newrelic dist/index.js"
