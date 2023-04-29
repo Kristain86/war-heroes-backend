@@ -11,6 +11,7 @@ import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import { authKeys } from './const/keys';
 import { User } from './models/userModel';
 import jwt from 'jsonwebtoken';
+import 'newrelic';
 
 dotenv.config();
 

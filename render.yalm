@@ -1,0 +1,9 @@
+services:
+  web:
+    buildCommand: npm run build
+    startCommand: node dist/index.js
+    environment:
+      NODE_ENV: production
+    healthCheckPath: /health
+    supplementalFiles:
+      - logs/**/*.log

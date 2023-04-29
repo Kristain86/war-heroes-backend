@@ -1,9 +1,11 @@
 import { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import { Serie } from '../models/serieModel';
+import logger from '../logger';
 
 // get all series
 const getAllSeries = async (req: Request, res: Response) => {
+  logger.info('Petición en SERIES');
   const allSeries = await Serie.find({}).sort({ createdAt: -1 });
   res.status(200).json(allSeries);
 };
