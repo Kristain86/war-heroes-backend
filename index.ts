@@ -11,7 +11,8 @@ import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import { authKeys } from './const/keys';
 import { User } from './models/userModel';
 import jwt from 'jsonwebtoken';
-import 'newrelic';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import newrelic from 'newrelic';
 
 dotenv.config();
 

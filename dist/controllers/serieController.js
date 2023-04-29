@@ -15,8 +15,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateSerie = exports.deleteSerie = exports.getSerie = exports.getAllSeries = exports.createSerie = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const serieModel_1 = require("../models/serieModel");
+const logger_1 = __importDefault(require("../logger"));
 // get all series
 const getAllSeries = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    logger_1.default.info('Petición en SERIES');
     const allSeries = yield serieModel_1.Serie.find({}).sort({ createdAt: -1 });
     res.status(200).json(allSeries);
 });

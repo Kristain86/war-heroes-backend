@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+// eslint-disable-next-line import/no-extraneous-dependencies
 const winston_1 = require("winston");
 const logger = (0, winston_1.createLogger)({
     level: 'info',
