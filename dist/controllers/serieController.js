@@ -32,6 +32,7 @@ const getSerie = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     else {
         const serie = yield serieModel_1.Serie.findById(id);
         if (!serie) {
+            logger_1.default.error('Mensaje de error', 'No serie found');
             return res.status(404).json({ error: 'No serie found' });
         }
         res.status(200).json(serie);

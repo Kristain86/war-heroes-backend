@@ -6,5 +6,5 @@ exports.authKeys = {
     AUTH_CLIENT_SECRET: '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',
     CALLBACK_URL: 'http://localhost:8000/auth/google/callback',
     USER_PROFILE_URL: 'https://www.googleapis.com/oauth2/v3/userinfo',
-    NEW_RELIC: '008b6407dded6b5e00d8aa0fb6e7656f72c8NRAL',
+    NEW_RELIC_LICENSE: 'ca8849a3ef8f6602f296e4008dde85f7FFFFNRAL',
 };

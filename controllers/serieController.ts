@@ -20,6 +20,7 @@ const getSerie = async (req: Request, res: Response) => {
     const serie = await Serie.findById(id);
 
     if (!serie) {
+      logger.error('Mensaje de error', 'No serie found');
       return res.status(404).json({ error: 'No serie found' });
     }
     res.status(200).json(serie);
